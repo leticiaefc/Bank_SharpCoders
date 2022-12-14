@@ -1,0 +1,15 @@
+C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\BankForAll\bin\Debug\net6.0\BankForAll.exe
+C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\BankForAll\bin\Debug\net6.0\BankForAll.deps.json
+C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\BankForAll\bin\Debug\net6.0\BankForAll.runtimeconfig.json
+C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\BankForAll\bin\Debug\net6.0\BankForAll.dll
+C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\BankForAll\bin\Debug\net6.0\BankForAll.pdb
+C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\BankForAll.csproj.AssemblyReference.cache
+C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\BankForAll.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\BankForAll.AssemblyInfoInputs.cache
+C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\BankForAll.AssemblyInfo.cs
+C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\BankForAll.csproj.CoreCompileInputs.cache
+C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\BankForAll.dll
+C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\refint\BankForAll.dll
+C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\BankForAll.pdb
+C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\BankForAll.genruntimeconfig.cache
+C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\ref\BankForAll.dll
