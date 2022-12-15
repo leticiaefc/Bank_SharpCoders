@@ -13,3 +13,18 @@ C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\B
 C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\BankForAll.pdb
 C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\BankForAll.genruntimeconfig.cache
 C:\Users\letic\OneDrive\Área de Trabalho\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\ref\BankForAll.dll
+C:\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\BankForAll.csproj.AssemblyReference.cache
+C:\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\BankForAll.GeneratedMSBuildEditorConfig.editorconfig
+C:\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\BankForAll.AssemblyInfoInputs.cache
+C:\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\BankForAll.AssemblyInfo.cs
+C:\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\BankForAll.csproj.CoreCompileInputs.cache
+C:\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\BankForAll.dll
+C:\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\refint\BankForAll.dll
+C:\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\BankForAll.pdb
+C:\Aula\projeto_um_ima_banco\BankForAll\BankForAll\bin\Debug\net6.0\BankForAll.exe
+C:\Aula\projeto_um_ima_banco\BankForAll\BankForAll\bin\Debug\net6.0\BankForAll.deps.json
+C:\Aula\projeto_um_ima_banco\BankForAll\BankForAll\bin\Debug\net6.0\BankForAll.runtimeconfig.json
+C:\Aula\projeto_um_ima_banco\BankForAll\BankForAll\bin\Debug\net6.0\BankForAll.dll
+C:\Aula\projeto_um_ima_banco\BankForAll\BankForAll\bin\Debug\net6.0\BankForAll.pdb
+C:\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\BankForAll.genruntimeconfig.cache
+C:\Aula\projeto_um_ima_banco\BankForAll\BankForAll\obj\Debug\net6.0\ref\BankForAll.dll

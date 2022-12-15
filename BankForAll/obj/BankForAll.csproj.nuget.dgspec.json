@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\letic\\OneDrive\\Área de Trabalho\\Aula\\projeto_um_ima_banco\\BankForAll\\BankForAll\\BankForAll.csproj": {}
+    "C:\\Aula\\projeto_um_ima_banco\\BankForAll\\BankForAll\\BankForAll.csproj": {}
   },
   "projects": {
-    "C:\\Users\\letic\\OneDrive\\Área de Trabalho\\Aula\\projeto_um_ima_banco\\BankForAll\\BankForAll\\BankForAll.csproj": {
+    "C:\\Aula\\projeto_um_ima_banco\\BankForAll\\BankForAll\\BankForAll.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\letic\\OneDrive\\Área de Trabalho\\Aula\\projeto_um_ima_banco\\BankForAll\\BankForAll\\BankForAll.csproj",
+        "projectUniqueName": "C:\\Aula\\projeto_um_ima_banco\\BankForAll\\BankForAll\\BankForAll.csproj",
         "projectName": "BankForAll",
-        "projectPath": "C:\\Users\\letic\\OneDrive\\Área de Trabalho\\Aula\\projeto_um_ima_banco\\BankForAll\\BankForAll\\BankForAll.csproj",
+        "projectPath": "C:\\Aula\\projeto_um_ima_banco\\BankForAll\\BankForAll\\BankForAll.csproj",
         "packagesPath": "C:\\Users\\letic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\letic\\OneDrive\\Área de Trabalho\\Aula\\projeto_um_ima_banco\\BankForAll\\BankForAll\\obj\\",
+        "outputPath": "C:\\Aula\\projeto_um_ima_banco\\BankForAll\\BankForAll\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
