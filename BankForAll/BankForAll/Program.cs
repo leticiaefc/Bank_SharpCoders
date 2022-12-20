@@ -105,7 +105,7 @@ public class Program
                 titulares.RemoveAt(indexParaDeletar);
                 senhas.RemoveAt(indexParaDeletar);
                 saldos.RemoveAt(indexParaDeletar);
-                Console.WriteLine("Conta deletada com sucesso!");                
+                Console.WriteLine("Conta deletada com sucesso!\n");                
             }
         }
     static void ListarTodasAsContas(List<string> cpfs, List<string> titulares, List<double> saldos)
