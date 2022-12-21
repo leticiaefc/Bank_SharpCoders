@@ -1,4 +1,6 @@
-﻿namespace BankForAll {
+﻿using System.Runtime.CompilerServices;
+
+namespace BankForAll {
 
 public class Program
 {
@@ -6,10 +8,9 @@ public class Program
     {
         Console.WriteLine("1 - Criar contar");
         Console.WriteLine("2 - Deletar conta");
-        Console.WriteLine("3 - Listar todas as contas registradas");
-        Console.WriteLine("4 - Detalhes de um usuário");
-        Console.WriteLine("5 - Consultar Saldo");
-        Console.WriteLine("6 - Entrar na conta");
+        Console.WriteLine("3 - Listar todas as contas registradas");   
+        Console.WriteLine("4 - Consultar Saldo de todas as contas");
+        Console.WriteLine("5 - Entrar na conta");
         Console.WriteLine("0 - Para sair do programa");
         Console.Write("Digite a opção desejada: ");
         // criar um comando par retornar uma ação
@@ -38,28 +39,25 @@ public class Program
                     break;
                 case 1:
                         Console.WriteLine();
-                    Console.WriteLine(" Precisamos de  algumas informações.\nPreencha os dados solicitados:\n");
-                    RegistroNovoUsuario(cpfs, titulares, senhas, saldos);
+                    Console.WriteLine("Precisamos de  algumas informações.\nPreencha os dados solicitados:\n");
+                    RegistroNovoUsuario(cpfs, senhas, titulares,  saldos);
                     Console.WriteLine();
                     break;
                 case 2:
                         Console.WriteLine();
-                    DeletarUsuario(cpfs, titulares, senhas, saldos);
+                    DeletarUsuario(cpfs, senhas, titulares, saldos);
                     break;
                 case 3:
                         Console.WriteLine();
                     ListarTodasAsContas(cpfs, titulares, saldos);
-                    break;
+                    break;                
                 case 4:
-                    Console.WriteLine();
-                        DetalhesDeUmUsuario();
-                    break;
-                case 5:
                      Console.WriteLine();
                         ConsultaSaldo(saldos);
                      break;
-                case 6:
+                case 5:
                         Console.WriteLine();
+                        TelaDeLogin(cpfs, senhas, titulares,saldos);
                         //criar ideias para a função logar
                  break;
 
@@ -75,26 +73,26 @@ public class Program
 
     }
 
-    static void RegistroNovoUsuario(List<string> cpfs, List<string> titulares, List<string> senhas, List<double> saldos)
+    static void RegistroNovoUsuario(List<string> cpfs, List<string> senhas, List<string> titulares, List<double> saldos)
     {
-        Console.Write("Digite o cpf: ");
-        cpfs.Add(Console.ReadLine());
-        Console.Write("Digite o nome: ");
-        titulares.Add(Console.ReadLine());
-        Console.Write("Digite uma senha: ");
-        senhas.Add(Console.ReadLine());
-        Console.Write("Seu saldo: ");
+            Console.Write("Digite o cpf: ");
+            cpfs.Add(Console.ReadLine());        
+            Console.Write("Digite uma senha: ");
+            senhas.Add(Console.ReadLine());
+            Console.Write("Digite o nome: ");
+            titulares.Add(Console.ReadLine());
+            Console.Write("Seu saldo: ");
             double valor = double.Parse(Console.ReadLine());
-        saldos.Add(valor);
+            saldos.Add(valor);
     }
 
-    static void DeletarUsuario(List <string> cpfs, List<string> titulares, List<string> senhas, List<double> saldos)
+    static void DeletarUsuario(List <string> cpfs, List<string> senhas, List<string> titulares, List<double> saldos)
         {
             Console.Write("Digite o cpf do titular que deseja deletar: ");
             string cpfParaDeletar = Console.ReadLine();
-            int indexParaDeletar = cpfs.FindIndex(d => d== cpfParaDeletar);
+            int indexParaDeletar = cpfs.FindIndex(d => d == cpfParaDeletar);
            
-            if (indexParaDeletar== -1)
+            if (indexParaDeletar == -1)
             {
                 Console.WriteLine("Não foi possível deletar este cpf");
                 Console.WriteLine("Conta não encontrada. Confira o cpf digitado");
@@ -112,24 +110,50 @@ public class Program
     {
         for (int i = 0; i < cpfs.Count; i++)
             {
-                NewMethod(cpfs, titulares, saldos, i);// conferir no console
+                NewMethod(cpfs, titulares, saldos, i);
             }
         }
 
         private static void NewMethod(List<string> cpfs, List<string> titulares, List<double> saldos, int i)
         {
-            Console.WriteLine($"CPF = {cpfs[i]} | Titular = {titulares[i]} | Saldo = R$ {saldos[i]:F2}");//conferir
+            Console.WriteLine($"CPF = {cpfs[i]} | Titular = {titulares[i]} | Saldo = R$ {saldos[i]:F2}");
         }
-        private static void DetalhesDeUmUsuario()
-        {
-            Console.WriteLine();
-        }
-
+        
         static void ConsultaSaldo(List<double> saldos)
         {
-            Console.WriteLine($"Seu saldo é de: {saldos.Sum()}");
+            Console.WriteLine($"A soma dos saldos é de: {saldos.Sum()}");
         }
 
+        private static void TelaDeLogin(List<string> cpfs, List<string> senhas, List<string> titulares, List<double> saldos)
+        {
+            Console.Write("Para acessar sua conta, digite o cpf: ");
+            string cpfParaLogin = Console.ReadLine();
+            int indexParaLogar = cpfs.FindIndex(c => c == cpfParaLogin);
+            Console.Write("Digite a senha: ");
+            string conferirSenha = Console.ReadLine();            
+            if (senhas[indexParaLogar] == conferirSenha)
+            {
+                Console.WriteLine();
+                Conta(titulares,saldos);
+            }
+            else
+            {
+                Console.WriteLine("Senha incorreta.");
+            }
+                        
+            static void Conta(List<string> titulares, List<double> saldos)
+            {
+                
+                Console.WriteLine($"Bem vindo(a)!");
+                Console.WriteLine($"Seu saldo é: {saldos}");
+                Console.WriteLine();
+                Console.WriteLine("1- Pix");
+                Console.WriteLine("2 - Sacar");
+                                                
+            }
+
+
+        }
 
     }
     
