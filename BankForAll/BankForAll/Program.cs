@@ -144,12 +144,12 @@ public class Program
             static void Conta(List<string> titulares, List<double> saldos)
             {
                 
-                Console.WriteLine($"Bem vindo(a)!");
-                Console.WriteLine($"Seu saldo é: {saldos}");
+                Console.WriteLine($"Bem vindo(a)!");                
                 Console.WriteLine();
                 Console.WriteLine("1- Pix");
                 Console.WriteLine("2 - Sacar");
-                                                
+                Console.WriteLine($"Seu saldo é: {saldos}");
+
             }
 
 
