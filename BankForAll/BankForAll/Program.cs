@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace BankForAll {
 
@@ -84,6 +85,7 @@ public class Program
             Console.Write("Seu saldo: ");
             double valor = double.Parse(Console.ReadLine());
             saldos.Add(valor);
+            Console.Clear();
     }
 
     static void DeletarUsuario(List <string> cpfs, List<string> senhas, List<string> titulares, List<double> saldos)
@@ -109,10 +111,12 @@ public class Program
     static void ListarTodasAsContas(List<string> cpfs, List<string> titulares, List<double> saldos)
     {
         for (int i = 0; i < cpfs.Count; i++)
-            {
-                NewMethod(cpfs, titulares, saldos, i);
-            }
+        {
+            NewMethod(cpfs, titulares, saldos, i);
         }
+           
+
+    }
 
         private static void NewMethod(List<string> cpfs, List<string> titulares, List<double> saldos, int i)
         {
@@ -130,27 +134,88 @@ public class Program
             string cpfParaLogin = Console.ReadLine();
             int indexParaLogar = cpfs.FindIndex(c => c == cpfParaLogin);
             Console.Write("Digite a senha: ");
-            string conferirSenha = Console.ReadLine();            
+            string conferirSenha = Console.ReadLine();
+            int u = cpfs.IndexOf(cpfParaLogin);
             if (senhas[indexParaLogar] == conferirSenha)
             {
                 Console.WriteLine();
-                Conta(titulares,saldos);
+                
+                Conta(cpfs, titulares,saldos,u);
             }
             else
             {
                 Console.WriteLine("Senha incorreta.");
             }
+
+            
                         
-            static void Conta(List<string> titulares, List<double> saldos)
+            static void Conta(List<string> cpfs, List<string> titulares, List<double> saldos, int u)
             {
+                Console.Clear();
                 
-                Console.WriteLine($"Bem vindo(a)!");                
-                Console.WriteLine();
-                Console.WriteLine("1- Pix");
-                Console.WriteLine("2 - Sacar");
-                Console.WriteLine($"Seu saldo é: {saldos}");
+                Console.WriteLine($"Bem vindo(a)!\n");
+
+                Console.WriteLine("1 - Pix");
+                Console.WriteLine("2 - Saque");
+                Console.WriteLine("3 - deposito\n");
+                Console.WriteLine("4-  Retornar a tela inicial");
+                //comando de retorno
+                Console.WriteLine($"Seu saldo é: {saldos}\n");
+                Console.Write("Digite a ação desejada: ");
+
+                int escolha = int.Parse(Console.ReadLine());
+
+                switch (escolha)
+                {
+                    case 1:
+                        Console.WriteLine();
+                        Pix(cpfs, saldos, u);
+                        break;
+                    case 2:
+                        Console.WriteLine();
+                        Saque(cpfs, saldos, u);
+                        break;
+                    case 3: 
+                        Console.WriteLine();
+                        Deposito(cpfs, saldos, u);
+                        break;
+                    case 4:
+                        Menu();
+                        break;// conferir
+                }
+
 
             }
+
+            static void Pix(List<string> cpfs, List<double> saldos, int u)
+            {
+                Console.Write("Digite o cpf do titular que deseja realizar a tranferência: ");
+                string cpfPix = Console.ReadLine();
+                Console.Write("Quanto deseja transferir? R$ ");
+                double valorPix = double.Parse(Console.ReadLine());
+                while(!cpfs.Contains(cpfPix))
+                {
+                    Console.WriteLine("Usuário não encontrado, confira os números digitados");
+                }
+                int r = cpfs.IndexOf(cpfPix);
+                saldos[u] -= valorPix;
+                saldos[r] += valorPix;
+                Console.WriteLine("Transferência concluída!");
+
+            }
+            static void Saque(List<string> cpfs, List<double> saldos, int u)
+            {
+                Console.Write("O quando deseja sacar?\nR$ ");
+                double saque = double.Parse(Console.ReadLine());
+                saldos[u] -= saque;
+            }
+            static void Deposito(List<string> cpfs, List<double> saldos,int u)
+            {
+                Console.Write("O quanto deseja depositar?\nR$ ");
+                double deposito = double.Parse(Console.ReadLine());
+                saldos[u] += deposito;
+            }
+
 
 
         }
