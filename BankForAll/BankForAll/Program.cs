@@ -154,35 +154,47 @@ public class Program
                 Console.Clear();
                 
                 Console.WriteLine($"Bem vindo(a)!\n");
-
+                
                 Console.WriteLine("1 - Pix");
                 Console.WriteLine("2 - Saque");
-                Console.WriteLine("3 - deposito\n");
-                Console.WriteLine("4-  Retornar a tela inicial");
-                //comando de retorno
+                Console.WriteLine("3 - deposito");
+                Console.WriteLine("4-  Retornar a tela inicial\n");
                 Console.WriteLine($"Seu saldo é: {saldos}\n");
                 Console.Write("Digite a ação desejada: ");
 
                 int escolha = int.Parse(Console.ReadLine());
+                do
+                {                    
 
-                switch (escolha)
-                {
-                    case 1:
-                        Console.WriteLine();
-                        Pix(cpfs, saldos, u);
-                        break;
-                    case 2:
-                        Console.WriteLine();
-                        Saque(cpfs, saldos, u);
-                        break;
-                    case 3: 
-                        Console.WriteLine();
-                        Deposito(cpfs, saldos, u);
-                        break;
-                    case 4:
-                        Menu();
-                        break;// conferir
-                }
+                    switch (escolha)
+                    {
+                        case 1:
+                            Console.WriteLine();
+                            Pix(cpfs, saldos, u);
+                            break;
+                        case 2:
+                            Console.WriteLine();
+                            Saque(cpfs, saldos, u);
+                            break;
+                        case 3:
+                            Console.WriteLine();
+                            Deposito(cpfs, saldos, u);
+                            break;
+                        case 4:
+                            Menu();
+                            break;
+                    }
+                    Console.Clear();
+                    Console.WriteLine("1 - Pix");
+                    Console.WriteLine("2 - Saque");
+                    Console.WriteLine("3 - deposito");
+                    Console.WriteLine("4-  Retornar a tela inicial\n");
+                    Console.WriteLine($"Seu saldo é: {saldos}\n"); // dalta mostrar o saldo atual
+                    Console.Write("Digite a ação desejada: "); // repeti, pois o metódo/classe estava dando um erro que não aprendi a consertar ainda
+                    escolha = int.Parse(Console.ReadLine());
+
+                } while (escolha != 4);
+
 
 
             }
@@ -196,6 +208,7 @@ public class Program
                 while(!cpfs.Contains(cpfPix))
                 {
                     Console.WriteLine("Usuário não encontrado, confira os números digitados");
+                    cpfPix = Console.ReadLine();
                 }
                 int r = cpfs.IndexOf(cpfPix);
                 saldos[u] -= valorPix;
