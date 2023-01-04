@@ -16,7 +16,7 @@ public class Program
         Console.WriteLine("5 - Entrar na conta");
         Console.WriteLine("0 - Para sair do programa");
         Console.Write("Digite a opção desejada: ");
-        }
+    }
 
     static void Main(string[] args)
     {
@@ -31,11 +31,11 @@ public class Program
           
             do
             {
-            Menu();
-            escolha = int.Parse(Console.ReadLine());
+                Menu();
+                escolha = int.Parse(Console.ReadLine());
 
-            switch (escolha)
-            {
+                switch (escolha)
+                {
                 case 0:
                     Console.WriteLine("Até mais!");
                     break;
@@ -61,8 +61,7 @@ public class Program
                 case 5:
                         Console.WriteLine();
                         TelaDeLogin(cpfs, senhas, titulares,saldos);
-                        //criar ideias para a função logar
-                 break;
+                        break;
 
                 }
 
@@ -109,8 +108,7 @@ public class Program
         for (int i = 0; i < cpfs.Count; i++)
         {
             NewMethod(cpfs, titulares, saldos, i);
-        }
-           
+        }     
 
     }
 
