@@ -148,12 +148,13 @@ public class Program
                         
             static void Conta(List<string> cpfs, List<string> titulares, List<double> saldos, int u, double saldo)
             {
-                Console.Clear();
-                MenuConta(saldo);
-                int escolha = int.Parse(Console.ReadLine());
+                
+                int escolha;
                 do
-                {                    
-
+                {
+                    Console.Clear();
+                    MenuConta(cpfs, saldos, u);
+                    escolha = int.Parse(Console.ReadLine());
                     switch (escolha)
                     {
                         case 1:
@@ -162,32 +163,27 @@ public class Program
                             break;
                         case 2:
                             Console.WriteLine();
-                            Saque(cpfs, saldos, u, saldo);
+                            Saque(cpfs, saldos, u);
                             break;
                         case 3:
                             Console.WriteLine();
                             Deposito(cpfs, saldos, u);
                             break;
-                        case 4:
-                            Menu();
-                            break;
                     }
-                    Console.Clear();
-                    MenuConta(saldo);
-                    escolha = int.Parse(Console.ReadLine());
+                                        
 
                 } while (escolha != 4);
 
 
 
             }
-            static void MenuConta(double saldo)
+            static void MenuConta(List<string> cpfs, List <double> saldos, int u)
             {
                 Console.WriteLine("1 - Pix");
                 Console.WriteLine("2 - Saque");
                 Console.WriteLine("3 - deposito");
                 Console.WriteLine("4 -  Retornar a tela inicial\n");
-                Console.WriteLine($"Seu saldo é: {saldo}\n"); // fazer atualização de saldos
+                Console.WriteLine($"Seu saldo é: {saldos[u]}\n");
                 Console.Write("Digite a ação desejada: ");
             }
 
@@ -208,12 +204,12 @@ public class Program
                 Console.WriteLine("Transferência concluída!");
 
             }
-            static void Saque(List<string> cpfs, List<double> saldos, int u, double saldo)
+            static void Saque(List<string> cpfs, List<double> saldos, int u)
             {
                 Console.Write("O quando deseja sacar?\nR$ ");
                 double saque = double.Parse(Console.ReadLine());
                 saldos[u] -= saque;
-                saldo-= saque;
+                
             }
             static void Deposito(List<string> cpfs, List<double> saldos,int u)
             {
