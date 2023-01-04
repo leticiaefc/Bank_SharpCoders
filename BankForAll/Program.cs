@@ -6,8 +6,9 @@ namespace BankForAll {
 
 public class Program
 {
+        
     static void Menu()
-    {
+    {        
         Console.WriteLine(" ");
         Console.WriteLine("1 - Criar contar");
         Console.WriteLine("2 - Deletar conta");
@@ -20,6 +21,9 @@ public class Program
 
     static void Main(string[] args)
     {
+            Console.BackgroundColor = ConsoleColor.DarkGray;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Clear();
 
         Console.WriteLine("Olá, bem vindo ao Bank For All.\n");
                     
@@ -144,8 +148,6 @@ public class Program
                 Console.WriteLine("Senha incorreta.");
             }
 
-            
-                        
             static void Conta(List<string> cpfs, List<string> titulares, List<double> saldos, int u, double saldo)
             {
                 
@@ -169,14 +171,17 @@ public class Program
                             Console.WriteLine();
                             Deposito(cpfs, saldos, u);
                             break;
+                        case 4:
+                            Console.Clear();
+                            break;
                     }
                                         
 
                 } while (escolha != 4);
 
 
-
             }
+
             static void MenuConta(List<string> cpfs, List <double> saldos, int u)
             {
                 Console.WriteLine("1 - Pix");
@@ -204,6 +209,7 @@ public class Program
                 Console.WriteLine("Transferência concluída!");
 
             }
+
             static void Saque(List<string> cpfs, List<double> saldos, int u)
             {
                 Console.Write("O quando deseja sacar?\nR$ ");
@@ -211,13 +217,13 @@ public class Program
                 saldos[u] -= saque;
                 
             }
+
             static void Deposito(List<string> cpfs, List<double> saldos,int u)
             {
                 Console.Write("O quanto deseja depositar?\nR$ ");
                 double deposito = double.Parse(Console.ReadLine());
                 saldos[u] += deposito;
             }
-
 
 
         }
