@@ -32,7 +32,7 @@ public class Program
         List<double> saldos = new List<double>();
         List<string> senhas = new List<string>();
         int escolha;
-          
+
             do
             {
                 Menu();
@@ -74,20 +74,43 @@ public class Program
     }
 
     static void RegistroNovoUsuario(List<string> cpfs, List<string> senhas, List<string> titulares, List<double> saldos)
-    {
+        {
             Console.Write("Digite o cpf: ");
-            cpfs.Add(Console.ReadLine());        
+            cpfs.Add(Console.ReadLine());
             Console.Write("Digite uma senha: ");
-            senhas.Add(Console.ReadLine());
+
+            string password = "";
+            while (true)
+            {
+                ConsoleKeyInfo key = Console.ReadKey(true);
+                
+                if (key.Key == ConsoleKey.Enter)// tecla Enter
+                {
+                    break;
+                }
+
+                if (key.Key == ConsoleKey.Backspace && password.Length > 0) // funcionamento da tecla Backspace
+                {
+                    password = password.Substring(0, password.Length - 1);
+                    Console.Write("\b \b");
+                }
+                else
+                {
+                    password += key.KeyChar;
+                    Console.Write("*");
+                }
+            }                    
+            senhas.Add(password);
+            Console.WriteLine();
             Console.Write("Digite o nome: ");
             titulares.Add(Console.ReadLine());
             Console.Write("Seu saldo: ");
             double valor = double.Parse(Console.ReadLine());
             saldos.Add(valor);
             Console.Clear();
-    }
+        }
 
-    static void DeletarUsuario(List <string> cpfs, List<string> senhas, List<string> titulares, List<double> saldos)
+        static void DeletarUsuario(List <string> cpfs, List<string> senhas, List<string> titulares, List<double> saldos)
         {
             Console.Write("Digite o cpf do titular que deseja deletar: ");
             string cpfParaDeletar = Console.ReadLine();
@@ -134,10 +157,33 @@ public class Program
             string cpfParaLogin = Console.ReadLine();
             int indexParaLogar = cpfs.FindIndex(c => c == cpfParaLogin);
             Console.Write("Digite a senha: ");
-            string conferirSenha = Console.ReadLine();
+            string password = "";
+            while (true)
+            {
+                ConsoleKeyInfo key = Console.ReadKey(true);
+
+                if (key.Key == ConsoleKey.Enter)
+                {
+                    break;
+                }
+
+                if (key.Key == ConsoleKey.Backspace && password.Length > 0)
+                {
+                    password = password.Substring(0, password.Length - 1);
+                    Console.Write("\b \b");
+                }
+                else
+                {
+                    password += key.KeyChar;
+                    Console.Write("*");
+                }
+            }
+
+            //string conferirSenha = Console.ReadLine();
             int u = cpfs.IndexOf(cpfParaLogin);
             double saldo = saldos[indexParaLogar];
-            if (senhas[indexParaLogar] == conferirSenha)
+
+            if (senhas[indexParaLogar] == password)
             {
                 Console.WriteLine();
                 
@@ -227,6 +273,7 @@ public class Program
 
 
         }
+
 
     }
     
